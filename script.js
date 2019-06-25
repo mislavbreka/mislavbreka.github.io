@@ -135,14 +135,21 @@ setInterval(changeRGB, 0.5);
 
 
 function dropDown(x){
-	console.log(x);
-	var temp = document.querySelector(x);
-	if(temp.className === 'box')temp.className = 'box minify';
-	else temp.className = 'box';
-	if(x!=='#box1')document.querySelector("#box1").className = 'box';
-	if(x!=='#box2')document.querySelector("#box2").className = 'box';
-	if(x!=='#box3')document.querySelector("#box3").className = 'box';
-	if(x!=='#box4')document.querySelector("#box4").className = 'box';
-	if(x!=='#box5')document.querySelector("#box5").className = 'box';
-	if(x!=='#box6')document.querySelector("#box6").className = 'box';
+	console.log("#box"+x);
+	var temp = document.querySelector("#box"+x);
+	if(temp.className === 'box'){
+		temp.className = 'box minify';
+		document.querySelector("#txt"+x).className = 'displaytxt';
+	}
+	else
+	{
+		temp.className = 'box';
+		document.querySelector("#txt"+x).className = 'hidetxt';
+	} 
+	for(var i = 1; i<=6; i++){
+	if(x!=i){
+		document.querySelector("#box"+i).className = 'box';
+		document.querySelector("#txt"+i).className = 'hidetxt';
+	}
+}
 }
