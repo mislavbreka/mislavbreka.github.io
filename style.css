@@ -1,0 +1,188 @@
+* {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    padding: 5px;
+    color: rgba(60,60,60, 0.6);
+    letter-spacing: 0.3em;
+    width: 120px;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+.showcase {
+    background: url("assets/kitten.jpg") no-repeat center center / cover;
+    height: 100vh;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    margin: 20vh auto;
+    align-items: center;
+    padding: 0 20px;
+}
+.typewrite {
+    line-height: 1.15vh;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+}
+.typewrite > .txt{
+    padding: 0.5vh;
+    border-right: 0.4rem solid rgba(255,255,255, 0.7);
+}
+
+.btnscroll {
+    font-size: 3em;
+    padding: 8px;
+    color: rgba(220,220,220, 0.9);
+    background-color: rgba(30,30,30, 0.2);
+    border-radius: 5px;
+    border: 2px solid rgba(20,20,20, 0.8);
+    margin-top: 30vh;
+}
+.btnscroll:hover {
+    background-color: rgba(60,60,60, 0.6);
+    color: rgba(255,255,255, 0.9);
+    cursor: pointer;
+}
+
+#content h1 {
+    color: rgba(20,20,20, 0.8);
+    font-size: 8vw;
+}
+.section {
+    height: 100vh;
+    display: flex;
+    padding: 20px;
+}
+.section h1 {
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+.boxcontainer{
+    margin: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxes {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    max-width: 240px;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid rgba(40, 40, 40, 0.6);
+    border-radius: 30px;
+    position: relative;
+}
+.box:hover {
+    cursor: pointer;
+    background-color: rgba(200,200,200, 0.8);
+}
+#sec1 {
+
+    flex-direction: column;
+}
+.rgbshow {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    margin: 20vh auto;
+    align-items: center;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 4vw;
+}
+.box img {
+    max-width: 240px;
+    align-content: center;
+}
+
+#poweredby img {
+    width: 100px;
+}
+#poweredby img:hover {
+    border-radius: 50px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+footer .clear {
+    clear: both;
+    float: none;
+}
+footer {
+    background: #222;
+    overflow: hidden;
+    border-top: solid 1px #000;
+    padding: 58px 0 0;
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1.5em;
+}
+footer p,  footer ul,  footer a,  footer .btn {
+    font-family: arial, helvetica, sans-serif;
+    line-height: 1.5em;
+    text-transform: none;
+}
+footer li {
+    font-size: .875em;
+    line-height: 1.5em;
+}
+footer .last {
+    margin-right: 0px !important;
+}
+#social a, #poweredby a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+}
+#poweredby {
+    max-width: 100%;
+    margin: 115px auto 0;
+    overflow: hidden;
+    text-align: center;
+}
+#poweredby p {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin: 0 0 10px;
+    text-align: center;
+}
+#social {
+    margin: 60px auto;
+    overflow: hidden;
+    text-align: center;
+}
+#social ul {
+    margin: 0px auto;
+    list-style-type: none;
+    padding: 0px;
+}
+#social ul.social, #social ul.contact {
+    display: inline-block;
+}
+#social li {
+    margin: 0 17px 0 0;
+    float: left;
+    color: rgba(255,255,255,0.7);
+}
+
+@media only screen and (max-width: 600px) {
+.showcase {
+    background-image: url("assets/kittenmobile.jpg");
+}
+#content h1 {
+    color: rgba(255,255,255, 0.8);
+}
+}
+
