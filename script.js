@@ -35,7 +35,6 @@ TypeWriter.prototype.type = function(){
 
 	//insert txt into element
 	this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
-	console.log(fullTxt);
 	
 
 	// Initial type speed
@@ -133,3 +132,17 @@ function changeRGB() {
 	scrollbtn.style.borderColor = "rgba(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ", 0.9)";
 }
 setInterval(changeRGB, 0.5);
+
+
+function dropDown(x){
+	console.log(x);
+	var temp = document.querySelector(x);
+	if(temp.className === 'box')temp.className = 'box minify';
+	else temp.className = 'box';
+	if(x!=='#box1')document.querySelector("#box1").className = 'box';
+	if(x!=='#box2')document.querySelector("#box2").className = 'box';
+	if(x!=='#box3')document.querySelector("#box3").className = 'box';
+	if(x!=='#box4')document.querySelector("#box4").className = 'box';
+	if(x!=='#box5')document.querySelector("#box5").className = 'box';
+	if(x!=='#box6')document.querySelector("#box6").className = 'box';
+}
