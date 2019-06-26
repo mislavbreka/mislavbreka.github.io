@@ -5,6 +5,30 @@ tag.classList.add("showcase");
 var tag = document.getElementById("content");
 tag.classList.add("content");
 
+var toggle = 1;
+function toggleRGBHEX(){
+	console.log(toggle);
+	if(toggle<3)toggle++;
+	else toggle = 1;
+	if(toggle===1){
+		document.querySelector(".rgbshow").className='rgbshow';
+		document.querySelector(".hexshow").className='hexshow hidetxt';
+	}
+	if(toggle===2){
+		document.querySelector(".rgbshow").className='rgbshow hidetxt';
+		document.querySelector(".hexshow").className='hexshow';
+	}
+	if(toggle===3){
+		document.querySelector(".rgbshow").className='rgbshow';
+		document.querySelector(".hexshow").className='hexshow';
+	}
+}
+
+document.querySelector(".section").addEventListener('click', function () {
+	toggleRGBHEX();
+})
+
+setInterval(changeRGB, 5);
 
 const TypeWriter = function(txtElement, words, wait = 3000){
 	this.txtElement = txtElement;
@@ -100,22 +124,34 @@ function smoothScroll(target, duration) {
 
 var scrollbtn = document.querySelector(".btnscroll");
 scrollbtn.addEventListener('click', function () {
-	smoothScroll("#sec1", 500);
+	smoothScroll(".description", 500);
 })
 
 /* COLORS */
 var rgb = [255, 255, 255]
 var sec1 = document.querySelector("#sec1");
 var rgbshow = document.querySelector(".rgbshow");
+var hexshow = document.querySelector(".hexshow");
 var RGBcount = 0;
 var RGBcurrent = 0;
 var increase = false;
+var RGBprevious;
+
+
 
 function changeRGB() {
-	sec1.style.backgroundColor = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
-	if (RGBcount === 255) RGBcount = 0;
-	if (rgb[RGBcurrent] === 255 && increase || rgb[RGBcurrent] === 0 && !increase) {
+	function getRandomRGB(){
 		RGBcurrent = Math.floor(Math.random() * 3);
+	}
+	if (RGBcount === 255){
+		RGBcount = 0;
+		RGBprevious = RGBcurrent;
+		console.log(RGBcurrent);
+	}
+	if (rgb[RGBcurrent] === 255 && increase || rgb[RGBcurrent] === 0 && !increase) {
+		while(RGBcurrent===RGBprevious){
+			getRandomRGB();
+		}
 	}
 	RGBcount += 1;
 	if (rgb[RGBcurrent] === 0) increase = true;
@@ -128,10 +164,32 @@ function changeRGB() {
 		sec1.style.color = "rgba(0,0,0,0.8)"
 	}
 	//console.log(rgb);
+	sec1.style.backgroundColor = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
 	rgbshow.innerHTML = "rgb(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ")";
+	hexshow.innerHTML = returnHEX(rgb);
 	scrollbtn.style.borderColor = "rgba(" + rgb[0] + "," + rgb[1] + "," + rgb[2] + ", 0.9)";
+	FPSshow.innerHTML = Math.round(gameLoop()) + ' FPS';
 }
-setInterval(changeRGB, 0.5);
+
+
+
+function returnHEX(rgb){
+	var HEXstring = [0,0,0];
+	for(var i = 0; i<3; i++){
+		HEXstring[i] = rgb[i].toString(16);
+		if(HEXstring[i].length===1)HEXstring[i]='0'+HEXstring[i];
+	}
+	return 'HEX #'+HEXstring[0]+HEXstring[1]+HEXstring[2];
+}
+
+var lastLoop = new Date();
+var FPSshow = document.querySelector(".fps");
+function gameLoop() { 
+    var thisLoop = new Date();
+    var fps = 1000 / (thisLoop - lastLoop);
+    lastLoop = thisLoop;
+    return fps;
+}
 
 
 function dropDown(x){

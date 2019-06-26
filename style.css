@@ -7,7 +7,7 @@
     padding: 5px;
     color: rgba(60,60,60, 0.6);
     letter-spacing: 0.3em;
-    width: 120px;
+    height: 10vh;
     margin: 0;
     text-transform: uppercase;
     font-size: 1.5em;
@@ -17,10 +17,11 @@
     height: 100vh;
 }
 .content {
+    height: 70vh;
     display: flex;
     flex-direction: column;
-    margin: 20vh auto;
     align-items: center;
+    justify-content: center;
     padding: 0 20px;
 }
 .typewrite {
@@ -33,7 +34,10 @@
     padding: 0.5vh;
     border-right: 0.4rem solid rgba(255,255,255, 0.7);
 }
-
+.btncontainer{
+    display: flex;
+    justify-content: center;
+}
 .btnscroll {
     font-size: 3em;
     padding: 8px;
@@ -41,8 +45,10 @@
     background-color: rgba(30,30,30, 0.2);
     border-radius: 5px;
     border: 2px solid rgba(20,20,20, 0.8);
-    margin-top: 30vh;
+    width: 200px;
+    text-align: center;
 }
+
 .btnscroll:hover {
     background-color: rgba(60,60,60, 0.6);
     color: rgba(255,255,255, 0.9);
@@ -56,9 +62,34 @@
 .section {
     height: 100vh;
     display: flex;
-    padding: 20px;
+    flex-direction: column;
+
+}
+.show{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    height: 80vh;
+    font-size: 3vw;
+}
+.description{
+    padding: 0 30px;
+    line-height: 10vh;
+}
+.fps{
+    padding: 0 30px;
+    line-height: 10vh;
+    text-align: right;
+}
+.join{
+    align-self: center;
+    justify-self: center;
 }
 .section h1 {
+    font-size: 1.5em;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
@@ -93,17 +124,13 @@
     background-color: rgba(200,200,200, 0.8);
 }
 
-#sec1 {
-
-    flex-direction: column;
-}
 .rgbshow {
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    margin: 20vh auto;
-    align-items: center;
-    padding: 0 20px;
+    padding: 10px;
+    text-align: center;
+    font-size: 4vw;
+}
+.hexshow {
+    padding: 10px;
     text-align: center;
     font-size: 4vw;
 }
@@ -222,7 +249,7 @@ p {
     margin: 10px 0;
 }
 .txtbar{
-    width: 100vw;
+    width: 100%;
     text-align: center;
     padding-top: 60px;
     color: rgba(40, 40, 40, 0.8);
