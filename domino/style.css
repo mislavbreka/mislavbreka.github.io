@@ -110,8 +110,9 @@
     margin-top:10px;
 }
 #header a{
-    display:block;
-    margin: 2px 10%;
+    align-self: center;
+    display: block;
+    margin: 2px 5%;
     text-align: center;
     color: rgba(100,100,100, 0.6);
     border: 1px solid rgba(255,255,255, 0.8);
@@ -119,5 +120,11 @@
     border-radius: 4px;
     padding: 10px 10px;
     width: 80%;
+}
+#morebtn{
+    width:100%;
+    margin-top: 70vh;
+    height:10vh;
+    text-align:center;
 }
 }
