@@ -106,13 +106,21 @@
 #logo{
     display:none;
 }
+#animation{
+    font-size:2em;
+}
 #header{
     margin-top:10px;
+    margin: auto;
+    width: 90%;
+    text-align:center;
+    padding: 10px;
 }
 #header a{
-    align-self: center;
-    display: block;
-    margin: 2px 5%;
+    float: left;
+    margin-top: 5px;
+    margin-left: 7%;
+    margin-right: 7%;
     text-align: center;
     color: rgba(100,100,100, 0.6);
     border: 1px solid rgba(255,255,255, 0.8);
@@ -123,8 +131,8 @@
 }
 #morebtn{
     width:100%;
-    margin-top: 70vh;
-    height:10vh;
+    margin-top: 60vh;
+    height:30vh;
     text-align:center;
 }
 }
