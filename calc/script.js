@@ -7,82 +7,87 @@ var obj = {
 };
 
 var input = document.getElementById('input');
-var output = document.getElementById('result');
-var output0 = document.getElementById('endresult');
-var indata = [];
-var outdata = [];
-var outdata0 = [];
+var rules_out = document.getElementById('rules');
+var result_out = document.getElementById('result');
+var resultdata = [];
+var ruledata = [];
 
 input.addEventListener('keyup',function(e){
     input.value = input.value.toUpperCase();
     if (e.keyCode === 13) {
-      if(input.value[input.value.length-1]=='?'){
-        join(input.value);
+      if(input.value[0]=='?'){
+        print2(result(input.value, ruledata), result_out);
       }else{
-      var temp = verify(input.value);
-      indata.push(temp[0]);
-      input.value='';
-      
-      reverse();
-      
-    }
-    updateList();
-      console.log(outdata);
+        print(getCombo(input.value), rules_out);
+      }
+      clearInput(input);
   }
 });
 
-function updateList(){
-  output.innerHTML='';
-  var _temp='';
-  for(var i = 0 ; i < outdata.length ; i++){
-    var element = document.createElement("p");
-    for(j = 0; j<outdata[i].length ; j++){
-      _temp+=outdata[i][j];
-    }
-    var node = document.createTextNode(_temp);
-    _temp='';
-    element.appendChild(node);
-    output.appendChild(element);
-  }
-
-  output0.innerHTML='';
-  var _temp='';
-  for(var i = 0 ; i < outdata0.length ; i++){
-    var element = document.createElement("p");
-    for(j = 0; j<outdata0[i].length ; j++){
-      _temp+=outdata0[i][j];
-    }
-    var node = document.createTextNode(_temp);
-    _temp='';
-    element.appendChild(node);
-    output0.appendChild(element);
-  }
+function clearInput(x){
+  x.value='';
 }
 
-function reverse(){
-  var _temp = [obj.x, obj.y, obj.z];
+function print(inputarray, location){
+  location.innerHTML='';
+  var temp='';
+    for(var a = 0 ; a < inputarray.length ; a++){
+      for(var b = 0 ; b < inputarray[a].length ; b++){
+        var element = document.createElement("p");
+        for(var c = 0 ; c < inputarray[a][b].length ; c++){
+          temp+=inputarray[a][b][c];
+        }
+        var node = document.createTextNode(temp);
+        temp='';
+        element.appendChild(node);
+        location.appendChild(element);
+      }
+    }
+}
+function print2(inputarray, location){
+  location.innerHTML='';
+  console.log(inputarray);
+  var temp='';
+    for(var a = 0 ; a < inputarray.length ; a++){
+      var element = document.createElement("p");
+      for(var b = 0 ; b < inputarray[a].length ; b++){
+          temp+=inputarray[a][b];
+        }
+        var node = document.createTextNode(temp);
+        temp='';
+        element.appendChild(node);
+        location.appendChild(element);
+      }
+    }
+
+
+function rules(equation){
   
-  if(obj.op==0){
-    outdata.push([obj.x, '=', obj.y, '+', obj.z]);
-    outdata.push([obj.y, '=', obj.x, '-', obj.z]);
-    outdata.push([obj.z, '=', obj.x, '-', obj.y]);
+  if(equation.op==0){
+    ruledata.push([]);
+    ruledata[ruledata.length-1].push([equation.x, '=', equation.y, '+', equation.z]);
+    ruledata[ruledata.length-1].push([equation.y, '=', equation.x, '-', equation.z]);
+    ruledata[ruledata.length-1].push([equation.z, '=', equation.x, '-', equation.y]);
   }
-  if(obj.op==1){
-    outdata.push([obj.x, '=', obj.y, '-', obj.z]);
-    outdata.push([obj.y, '=', obj.x, '+', obj.z]);
-    outdata.push([obj.z, '=', obj.y, '-', obj.x]);
+  if(equation.op==1){
+    ruledata.push([]);
+    ruledata[ruledata.length-1].push([equation.x, '=', equation.y, '-', equation.z]);
+    ruledata[ruledata.length-1].push([equation.y, '=', equation.x, '+', equation.z]);
+    ruledata[ruledata.length-1].push([equation.z, '=', equation.y, '-', equation.x]);
   }
-  if(obj.op==2){
-    outdata.push([obj.x, '=', obj.y, '*', obj.z]);
-    outdata.push([obj.y, '=', obj.x, '/', obj.z]);
-    outdata.push([obj.z, '=', obj.x, '/', obj.y]);
+  if(equation.op==2){
+    ruledata.push([]);
+    ruledata[ruledata.length-1].push([equation.x, '=', equation.y, '*', equation.z]);
+    ruledata[ruledata.length-1].push([equation.y, '=', equation.x, '/', equation.z]);
+    ruledata[ruledata.length-1].push([equation.z, '=', equation.x, '/', equation.y]);
   }
-  if(obj.op==3){
-    outdata.push([obj.x, '=', obj.y, '/', obj.z]);
-    outdata.push([obj.y, '=', obj.x, '*', obj.z]);
-    outdata.push([obj.z, '=', obj.y, '/', obj.x]);
+  if(equation.op==3){
+    ruledata.push([]);
+    ruledata[ruledata.length-1].push([equation.x, '=', equation.y, '/', equation.z]);
+    ruledata[ruledata.length-1].push([equation.y, '=', equation.x, '*', equation.z]);
+    ruledata[ruledata.length-1].push([equation.z, '=', equation.y, '/', equation.x]);
   }
-  
+  return ruledata;
 }
 
 function AinB(a, b){
@@ -94,7 +99,7 @@ function AinB(a, b){
   return false;
 }
 
-function verify(input){
+function getCombo(input){
   var _temp = '';
   var openbracket = false;
   for(var i = 0 ; i<input.length ; i++){
@@ -135,7 +140,6 @@ function verify(input){
       obj.op = 3;
       _temp='';
     }
-    
     else{
       _temp+=input.charAt(i);
       if((i+1)==input.length){
@@ -144,32 +148,39 @@ function verify(input){
       }
     }
   }
-  
-  return [input];
+  return rules(obj);
 }
 
-function join(x){
-  x=x.slice(0, -1);
-  var _temp = '';
-  for(var i = 0 ; i < outdata.length ; i++){
-    if(outdata[i][0]==x){
-      for(var j = 0 ; j < outdata.length ; j++){
-        if(AinB(outdata[i][0],outdata[j]) & AinB(outdata[i][2],outdata[j]) & AinB(outdata[i][4],outdata[j]) ){
-          continue;
-        }
-        if(outdata[i][2]==outdata[j][0]){
-          _temp = outdata[i][0].concat(outdata[i][1],'(',outdata[j][2],outdata[j][3],outdata[j][4],')',outdata[i][3],outdata[i][4]);
-          outdata0.push(_temp);
-          temp='';
-        }
-        if(outdata[i][4]==outdata[j][0]){
-          _temp = outdata[i][0].concat(outdata[i][1],outdata[i][2] ,outdata[i][3],'(',outdata[j][2],outdata[j][3],outdata[j][4],')');
-          outdata0.push(_temp);
-          temp='';
-        }
+function result(input, ruledata){
+  input=input.substring(1);
+  var temp = '';
+  for(var a = 0 ; a < ruledata.length ; a++){
+    for(var b = 0 ; b < ruledata[a].length ; b++){
+        if(ruledata[a][b][0]==input){
+          for(var c = 0 ; c < ruledata.length ; c++){
+            for(var d = 0 ; d < ruledata[c].length ; d++){
+              /** in future add loop here for more than two val */
+              if(AinB(ruledata[a][b][0],ruledata[c][d]) & AinB(ruledata[a][b][2],ruledata[c][d]) & AinB(ruledata[a][b][4],ruledata[c][d]) ){
+                continue;
+              }
+              if(ruledata[a][b][2]==ruledata[c][d][0]){
+                temp = [ruledata[a][b][0], ruledata[a][b][1],'(',ruledata[c][d][2],ruledata[c][d][3],ruledata[c][d][4],')',ruledata[a][b][3],ruledata[a][b][4]];
+                resultdata.push(temp);
+                temp='';
+              }
+              if(ruledata[a][b][4]==ruledata[c][d][0]){
+                temp = [ruledata[a][b][0], ruledata[a][b][1], ruledata[a][b][2], ruledata[a][b][3],'(',ruledata[c][d][2],ruledata[c][d][3],ruledata[c][d][4],')'];
+                resultdata.push(temp);
+                temp='';
+              }
+              
+            }
+          }
       }
-      
-      break;
     }
   }
+  
+  
+  console.log(resultdata);
+  return resultdata;
 }
