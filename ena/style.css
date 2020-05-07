@@ -1,0 +1,165 @@
+@font-face {
+    font-family: RobotoMedium;
+    src: url("Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: RobotoBlack;
+    src: url("Roboto-Black.ttf");
+}
+body {
+    font-family: RobotoMedium;
+    min-height: 600px;
+    margin: 0;
+    padding: 0;
+}
+
+navigation {
+    display: grid;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+    color: rgb(83, 83, 83);
+    background-color: #fffefe;
+    box-shadow: 0px 0px 4px 1px #333;
+}
+
+.navcontainer {
+    display: grid;
+    width: 100%;
+    max-width: 1000px;
+    place-self: center;
+    grid-auto-flow: column;
+}
+
+.navcontainer div {
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    place-content: center;
+    gap: 5px;
+}
+
+.links a {
+    text-align: center;
+    padding: 4px;
+    min-width: 60px;
+    border: 1px solid silver;
+    border-radius: 2px;
+    transition: all 0.5s;
+}
+
+.links a:hover {
+    border: 1px solid #333;
+    color: #464646;
+    box-shadow: 0px 0px 4px 1px rgba(35, 216, 248, 0.747);
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: #333;
+}
+
+section {
+    padding-top: 60px;
+    display: grid;
+    grid-auto-flow: row;
+    justify-content: center;
+    justify-items: center;
+    font-size: 40px;
+    color: #3d3d3d;
+}
+
+.icon {
+    display: grid;
+    width: 80vw;
+    z-index: -5;
+    max-width: 800px;
+    opacity: 0.1;
+    position: fixed;
+    -webkit-animation: spin 8s linear infinite;
+    -moz-animation: spin 8s linear infinite;
+    animation: spin 8s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.container {
+    display: grid;
+    padding: 10px;
+    width: 90vw;
+    max-width: 800px;
+    place-content: center;
+}
+
+.container a {
+    font-size: 1.5rem;
+    font-family: RobotoBlack;
+    color: rgba(0, 0, 0, 0.637);
+    margin: 10px;
+}
+
+.container h6 {
+    margin: 15px 0px;
+    padding: 0px 5px;
+}
+h3{
+    margin: 0;
+    color: rgba(0, 0, 0, 0.712);
+}
+
+.image {
+    display: block;
+    border-radius: 4px;
+    width: 90vw;
+    margin: 15px 0;
+    max-width: 800px;
+    box-shadow: 0px 0px 8px 0px #333;
+}
+
+.next {
+    display: grid;
+    place-content: center;
+    place-items: center;
+    margin: 60px 0;
+}
+
+.next a {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid silver;
+    width: 200px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+a .important{
+    color: rgba(218, 14, 14, 0.897);
+}
+
+.active {
+    box-shadow: 0px 0px 4px 1px rgba(35, 216, 248, 0.747);
+    background-color: rgba(35, 216, 248, 0.747);
+}
+
+.next a:hover {
+    border: 1px solid #333;
+    box-shadow: 0px 0px 4px 1px rgba(35, 216, 248, 0.747);
+}
