@@ -1,92 +1,49 @@
 <!DOCTYPE html>
-<html>
+
 <head>
-<link rel="icon" href="assets/githubIcon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <title> OPCENITO </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header id="showcase">
-  <div id="logo">Mislav<br>
-    |Breka</div>
-  <div id="content">
-    <h1 class="typewrite" data-wait="1000" data-words='[ "Hi there!", "no plugins", "no bootstrap", "pure html", "pure css", "pure javascript", "cute kitten"]'></h1>
-  </div>
-  <div class="btncontainer">
-  <div class="btnscroll">MEOW</div>
-</div>
-</header>
-
-<div class="section" id="sec1">
-  <h1 class="description">Web design, redefined.</h1>
-     <div class="show">
-       <div class="join">
-        <h1 class="rgbshow"></h1>
-        <h1 class="hexshow hidetxt"></h1>
-      </div>
+    <navigation>
+        <div class="navcontainer">
+            <div class="logo">
+                <h3>KORONA VIRUSI</h3>
+            </div>
+            <div class="links">
+                <a class="active" href="index.html">OPCENITO</a>
+                <a href="sars.html">SARS</a>
+                <a href="covid.html">COVID-19</a>
+                <a href="prevencija.html">PREVENCIJA</a>
+            </div>
+        </div>
+    </navigation>
+    <section>
+        <div class="container">
+            <h6>OPCENITO O KORONAVIRUSIMA</h6>
+            <a>Koronavirusi su skupina virusa koji uzrokuju bolesti kod sisavaca i ptica.</a>
+            <a> Virusi kod ljudi uzrokuju respiratorne infekcije, poput prehlade, koje su obično blage.</a>
+            <a> Rjeđi oblici, poput SARS-a, MERS-a i bolesti COVID-19, mogu biti smrtonosni.</a>
+            <a> Ne postoji odobreno cjepivo ili antivirusni lijekovi za sprječavanje ili liječenje virusa.</a>
+            <a> Naziv "koronavirus" dolazi od latinske riječi corona, čije je značenje "kruna" ili "aureola",
+                a odnosi se na karakteristični izgled virusnih čestica (viriona): imaju obod koji podsjeća na krunu ili
+                koronu Sunca.</a>
+        </div>
+        <img class="icon" src="corona.png"></img>
+    </section>
+    <section>
+        <div class="container">
+            <h6>STRUKTURA KORONAVIRUSA</h6>
+            <img class="image" src="sarscov2.jpeg"></img>
+        </div>
+    </section>
+    <div class="next">
+        <a href="sars.html">Sljedeca stranica</a>
     </div>
-  <h1 class="fps" id="fps"></h1>
-</div>
-
-<h1 class="txtbar">STUFF I'M AVERAGE AT</h1>
-<section class="boxcontainer" id="sec2">
-<div class="boxes">
-  <div class="box" id="box1" onclick="dropDown('1')"> <img src="assets/cIcon.png" alt=""><a>C</a>
-  <div class="hidetxt" id="txt1">
-  <h4 class="exp">EXPERIENCE: 1 year</h4>
-  <h4>C is a procedural programming language.<br><br>The main features of C language include low-level access to memory, simple set of keywords, and clean style, these features make C language suitable for system programming like operating system or compiler development.</h4>
-  </div>
-  </div>
-  <div class="box" id="box2" onclick="dropDown('2')"> <img src="assets/pythonIcon.png" alt=""><a>PYTHON</a>
-    <div class="hidetxt" id="txt2">
-        <h4 class="exp">EXPERIENCE: 2 years</h4>
-      <h4>Python is an interpreted, high-level, general-purpose programming language.<br><br>  Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.</h4>
-    </div>
-  </div>
-  <div class="box" id="box3" onclick="dropDown('3')"> <img src="assets/arduinoIcon.png" alt=""><a>ARDUINO</a>
-    <div class="hidetxt" id="txt3">
-        <h4 class="exp">EXPERIENCE: 4 years</h4>
-      <h4>The Arduino IDE supports the languages C and C++ using special rules of code structuring.<br><br>It is an open-source hardware and software company, project and user community.</h4>
-    </div>
-  </div>
-  <div class="box" id="box4" onclick="dropDown('4')"> <img src="assets/htmlIcon.png" alt=""><a>HTML</a>
-    <div class="hidetxt" id="txt4">
-        <h4 class="exp">EXPERIENCE: 5 years</h4>
-      <h4>Hyper Ttext Markup Language<br><br>HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</h4>
-    </div>
-  </div>
-  <div class="box" id="box5" onclick="dropDown('5')"> <img src="assets/javascriptIcon.png" alt=""><a>JAVASCRIPT</a>
-    <div class="hidetxt" id="txt5">
-        <h4 class="exp">EXPERIENCE: 1 year</h4>
-      <h4>Javascript is a high-level, interpreted programming language.<br><br>JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it, and major web browsers have a dedicated JavaScript engine to execute it.</h4>
-    </div>
-  </div>
-  <div class="box" id="box6" onclick="dropDown('6')"> <img src="assets/cssIcon.png" alt=""><a>CSS</a>
-    <div class="hidetxt" id="txt6">
-        <h4 class="exp">EXPERIENCE: 5 years</h4>
-      <h4>Cascading Style Sheets<br><br>CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts. It is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</h4>
-    </div>
-  </div>
-</div>
-</section>
-<footer>
-<div class="contentt">
-<div class="clear"></div>
-<div id="poweredby">
-  <p>Hosted by Github</p>
-  <a href="https://github.com/mislavbreka/praksa/raw/master/test.exe">
-    <img src="assets/githubIcon.png" alt="" > </a> </div>
-  <p>Entirely coded and developed by Mislav Breka.</p>
-<div class="clear"></div>
-<div id="social">
-  <ul class="social">
-    <li><a href="https://www.facebook.com/mislav.breka.9">Facebook</a></li>
-    <li><a href="https://github.com/mislavbreka">Github</a></li>
-    <li class="last"><a href="https://www.instagram.com/mis1av">Instagram</a></li>
-  </ul>
-</div>
-</footer>
-<script src="script.js" type="text/javascript"></script>
 </body>
+
 </html>
