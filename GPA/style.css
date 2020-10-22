@@ -1,0 +1,107 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+section {
+    max-width: 600px;
+    margin: auto;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #fd7e14;
+}
+
+h2{
+    margin: 20px 0 5px 0;
+    font-size: 1.2rem;
+    color: #696969;
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.2rem;
+
+    color: #696969;
+}
+
+h4 {
+    color: #ff0000;
+}
+
+p {
+    font-weight: lighter;
+    color: #424242;
+}
+
+br {
+    clear: both;
+}
+
+hr {
+    border: 1px solid #fd7e14;
+}
+
+form {
+    margin: 1em 0;
+}
+
+form div {
+    display: block;
+    width: 100%;
+    margin: 0;
+}
+
+form div div{
+    width: 50%;
+}
+
+form .grade {
+    float: left;
+}
+
+form .credit {
+    float: right;
+}
+
+input{
+    width: 90%;
+    line-height: 1.6rem;
+    font-size: 1.2rem;
+    padding: 2px 5px;
+    border: 1px solid #979797;
+    border-radius: 4px;
+    color: #575757;
+}
+
+input:focus{
+    outline-color: #fd7e14;
+}
+
+.error{
+    color: #ff0000d8;
+}
+
+button {
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    float: right;
+    background-color: #fd7e14;
+    color: #ffffff;
+    transition: all 200ms;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #474747;
+    box-shadow: 0px 0px 4px 1px #979797;
+}
+
+button:focus, button:active, button {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" async defer></script>
+</head>
+
+<body>
+    <section>
+        <h1>GPA Calculator</h1>
+        <p>
+            This is an example of a simple GPA calculator.
+            Please enter your grades and credits below in order for GPA to be calculated.
+        </p>
+        <p>
+            *Grade should be represented by a letter (A, B, C, D, F)
+        </p>
+        <p>
+            *Credit should be between 1 and 4 (inclusive)
+        </p>
+        <hr />
+        <form>
+            <div id="course-1">
+                <h2>Course 1</h2>
+                <div class="grade">
+                    <label for="grade-1">Grade</label>
+                    <input id="grade-1" type="text" oninput="addNextNode(1)">
+                </div>
+                <div class="credit">
+                    <label for="credit-1">Credit</label>
+                    <input id="credit-1" type="text" oninput="addNextNode(1)">
+                </div>
+                <br />
+            </div>
+            <br />
+            <hr />
+            <h3>Your GPA is: <span id="result">0.00</span></h3>
+            <button type="button" onclick="calculateGPA()">CALCULATE</button>
+
+        </form>
+    </section>
+</body>
+
+</html>
