@@ -96,11 +96,11 @@ function calculateGPA() {
                 break;
             default:
                 if (grade!=""){
-                    addError("Wrong Grade for Course " + (counter+1) + " - Expected: <em>A, B, C, D</em> or <em>F</em>, and got: <em> " + gradeString +"</em>.");
+                    addError("Wrong Grade for Course " + (counter+1) + " - Expected: <em>A B C D</em> or <em>F</em> , and got: <em> " + gradeString +"</em>.");
                     currentCourse.childNodes[3].childNodes[3].value = "";
                 }
                 if ( !isNaN(credit) && !(0<credit && credit<5) ){
-                    addError("Wrong Credit for Course " + (counter+1) + " - Expected: <em>1, 2, 3,</em> or <em>4</em>, and got: <em> " + credit +"</em>.");
+                    addError("Wrong Credit for Course " + (counter+1) + " - Expected: <em>1 2 3</em> or <em>4</em> , and got: <em> " + credit +"</em>.");
                     currentCourse.childNodes[5].childNodes[3].value = "";
                 }
                 continue;
@@ -111,7 +111,7 @@ function calculateGPA() {
             sumCredits += credit;
         } else {
             if ( !isNaN(credit) ){
-                addError("Wrong Credit for Course " + (counter+1) + " - Expected: <em>1, 2, 3,</em> or <em>4</em>, and got: <em> " + credit +" </em>.");
+                addError("Wrong Credit for Course " + (counter+1) + " - Expected: <em>1 2 3</em> or <em>4</em> , and got: <em> " + credit +" </em>.");
             }
             currentCourse.childNodes[5].childNodes[3].value = "";
         }

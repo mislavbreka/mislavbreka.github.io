@@ -46,7 +46,10 @@ br {
 }
 
 hr {
+    background-color: #fd7e14;
     border: 1px solid #fd7e14;
+    border-radius: 1px;
+    height: 1px;
 }
 
 ul {
