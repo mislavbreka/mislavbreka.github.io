@@ -1,10 +1,26 @@
 @font-face {
     font-family: Roboto;
-    src: url("Roboto-Regular.ttf");
-  }
+    src: url("fonts/Roboto-Thin.ttf");
+    font-weight: 100;
+}
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto-Light.ttf");
+    font-weight: 200;
+}
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto-Black.ttf");
+    font-weight: bold;
+}
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto-Regular.ttf");
+    font-weight: normal;
+}
 
-body {
-    font-family: Roboto, 'Montserrat', sans-serif;
+* {
+    font-family: Roboto;
 }
 
 section {
@@ -21,22 +37,19 @@ h1 {
 h2{
     margin: 20px 0 0 0;
     font-size: 1.2rem;
+    font-weight: 100;
     color: #696969;
 }
 
 h3 {
     margin: 0;
     font-size: 1.2rem;
-    font-weight: normal;
+    font-weight: 200;
     color: #696969;
 }
 
-h3 span {
-    font-weight: bold;
-}
-
 p {
-    font-weight: light;
+    font-weight: 200;
     margin: 10px 0;
     color: #757575;
 }
@@ -70,7 +83,7 @@ ul li {
 
 em {
     font-style: unset;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 form {
@@ -98,7 +111,7 @@ form .credit {
 label {
     position: relative;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: normal;
     color: #fd7e14;
     padding: 0 0.2rem;
     top: 0.6rem;
