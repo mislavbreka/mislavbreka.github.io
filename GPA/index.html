@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GPA Calculator</title>
+    <link rel="icon" href="rit-logo.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" async defer></script>
 </head>
@@ -17,11 +18,12 @@
             Please enter your grades and credits below in order for GPA to be calculated.
         </p>
         <p>
-            *Grade should be represented by a letter (A, B, C, D, F)
+            <em>*Grade</em> should be represented with a letter (A, B, C, D, F), and could be followed with a symbol ( - or + ).
         </p>
         <p>
-            *Credit should be between 1 and 4 (inclusive)
+            <em>*Credit</em> should be a number between 1 and 4 (inclusive).
         </p>
+        <ul id="error"></ul>
         <hr />
         <form>
             <div id="course-1">
@@ -40,8 +42,8 @@
             <hr />
             <h3>Your GPA is: <span id="result">0.00</span></h3>
             <button type="button" onclick="calculateGPA()">CALCULATE</button>
-
         </form>
+
     </section>
 </body>
 

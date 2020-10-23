@@ -1,5 +1,10 @@
+@font-face {
+    font-family: Roboto;
+    src: url("Roboto-Regular.ttf");
+  }
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Roboto, 'Montserrat', sans-serif;
 }
 
 section {
@@ -14,7 +19,7 @@ h1 {
 }
 
 h2{
-    margin: 20px 0 5px 0;
+    margin: 20px 0 0 0;
     font-size: 1.2rem;
     color: #696969;
 }
@@ -22,17 +27,18 @@ h2{
 h3 {
     margin: 0;
     font-size: 1.2rem;
-
+    font-weight: normal;
     color: #696969;
 }
 
-h4 {
-    color: #ff0000;
+h3 span {
+    font-weight: bold;
 }
 
 p {
-    font-weight: lighter;
-    color: #424242;
+    font-weight: light;
+    margin: 10px 0;
+    color: #757575;
 }
 
 br {
@@ -41,6 +47,27 @@ br {
 
 hr {
     border: 1px solid #fd7e14;
+}
+
+ul {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+ul a{
+    position: relative;
+    color: #696969;
+    left: -20px;
+}
+
+ul li {
+    color: #ff0000;
+    line-height: 1.4rem;
+}
+
+em {
+    font-style: unset;
+    font-weight: bold;
 }
 
 form {
@@ -65,22 +92,31 @@ form .credit {
     float: right;
 }
 
+label {
+    position: relative;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fd7e14;
+    padding: 0 0.2rem;
+    top: 0.6rem;
+    left: 0.6rem;
+    background-color: #ffffff;
+}
+
 input{
-    width: 90%;
-    line-height: 1.6rem;
+    width: 99%;
+    line-height: 2rem;
     font-size: 1.2rem;
-    padding: 2px 5px;
+    padding: 5px 5px 2px 5px;
     border: 1px solid #979797;
     border-radius: 4px;
     color: #575757;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 input:focus{
     outline-color: #fd7e14;
-}
-
-.error{
-    color: #ff0000d8;
 }
 
 button {
