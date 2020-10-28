@@ -1,50 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GPA Calculator</title>
-    <link rel="icon" href="rit-logo.png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="rit-logo.png" />
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" async defer></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <section>
-        <h1>GPA Calculator</h1>
-        <p>
-            This is an example of a simple GPA calculator.
-            Please enter your grades and credits below in order for GPA to be calculated.
-        </p>
-        <p>
-            <em>*Grade</em> should be represented with a letter (A, B, C, D, F), and could be followed with a symbol ( - or + ).
-        </p>
-        <p>
-            <em>*Credit</em> should be a number between 1 and 4 (inclusive).
-        </p>
-        <ul id="error"></ul>
+      <h1>GPA Calculator</h1>
+      <p>
+        This is an example of a simple GPA calculator. Please enter your grades
+        and credits below in order for GPA to be calculated.
+      </p>
+      <p>
+        <em>*Grade</em> should be represented with a letter (A, B, C, D, F), and
+        could be followed with a symbol ( - or + ).
+      </p>
+      <p><em>*Credit</em> should be a number between 1 and 4 (inclusive).</p>
+      <ul id="error"></ul>
+      <hr />
+      <form>
+        <div id="course-1">
+          <h2>Course 1</h2>
+          <div class="grade">
+            <label for="grade-1">Grade</label>
+            <input id="grade-1" type="text" oninput="addCourse(1)" />
+          </div>
+          <div class="credit">
+            <label for="credit-1">Credit</label>
+            <input id="credit-1" type="text" oninput="addCourse(1)" />
+          </div>
+          <br />
+        </div>
+        <br />
         <hr />
-        <form>
-            <div id="course-1">
-                <h2>Course 1</h2>
-                <div class="grade">
-                    <label for="grade-1">Grade</label>
-                    <input id="grade-1" type="text" oninput="addCourse(1)">
-                </div>
-                <div class="credit">
-                    <label for="credit-1">Credit</label>
-                    <input id="credit-1" type="text" oninput="addCourse(1)">
-                </div>
-                <br />
-            </div>
-            <br />
-            <hr />
-            <h3>Your GPA is: <em id="result">0.00</em></h3>
-            <button type="button" onclick="calcGPA()">CALCULATE</button>
-        </form>
-
+        <h3>Your GPA is: <em id="result">0.00</em></h3>
+        <button type="button" onclick="calcGPA()">CALCULATE</button>
+      </form>
     </section>
-</body>
-
+    <section style="text-align: center; clear: both">
+        <a href="GPA.zip">Download ZIP</a>
+    </section>
+  </body>
 </html>
