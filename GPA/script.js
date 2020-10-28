@@ -44,7 +44,7 @@ const appendCourse = (id, course) => {
   document.getElementById(`course-${id}`).after(course);
 };
 
-function calcGPA() {
+const calcGPA = () => {
   deleteErrors();
   let sumPoints = 0;
   let sumCredits = 0;
@@ -132,7 +132,7 @@ function calcGPA() {
   }
 }
 
-let gradeToPoints = (grade) => {
+const gradeToPoints = (grade) => {
   switch (grade) {
     case "A":
       return 4;
@@ -158,18 +158,18 @@ const getSpecialPoints = (symbol) => {
   return 0;
 };
 
-function addError(message) {
+const addError = (message) => {
   if (checkErrors()) {
     document.getElementById("error").innerHTML = `<a><em>Errors: </em></a>`;
   }
   document.getElementById("error").innerHTML += `<li>${message}</li>`;
 }
 
-function deleteErrors() {
+const deleteErrors = () => {
   document.getElementById("error").innerHTML = ``;
 }
 
-function checkErrors() {
+const checkErrors = () => {
   if (document.getElementById("error").innerHTML == ``) {
     return true;
   }
