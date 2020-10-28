@@ -30,18 +30,18 @@
                 <h2>Course 1</h2>
                 <div class="grade">
                     <label for="grade-1">Grade</label>
-                    <input id="grade-1" type="text" oninput="addNextNode(1)">
+                    <input id="grade-1" type="text" oninput="addCourse(1)">
                 </div>
                 <div class="credit">
                     <label for="credit-1">Credit</label>
-                    <input id="credit-1" type="text" oninput="addNextNode(1)">
+                    <input id="credit-1" type="text" oninput="addCourse(1)">
                 </div>
                 <br />
             </div>
             <br />
             <hr />
             <h3>Your GPA is: <em id="result">0.00</em></h3>
-            <button type="button" onclick="calculateGPA()">CALCULATE</button>
+            <button type="button" onclick="calcGPA()">CALCULATE</button>
         </form>
 
     </section>

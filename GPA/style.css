@@ -31,7 +31,7 @@ section {
 h1 {
     font-weight: bold;
     font-size: 2rem;
-    color: #fd7e14;
+    color: #f36e21;
 }
 
 h2{
@@ -59,8 +59,8 @@ br {
 }
 
 hr {
-    background-color: #fd7e14;
-    border: 1px solid #fd7e14;
+    background-color: #f36e21;
+    border: 1px solid #f36e21;
     border-radius: 1px;
     height: 1px;
 }
@@ -77,13 +77,13 @@ ul a{
 }
 
 ul li {
-    color: #ff0000;
+    color: #dd0000;
     line-height: 1.4rem;
 }
 
 em {
     font-style: unset;
-    font-weight: normal;
+    font-weight: bolder;
 }
 
 form {
@@ -112,7 +112,7 @@ label {
     position: relative;
     font-size: 1rem;
     font-weight: normal;
-    color: #fd7e14;
+    color: #f36e21;
     padding: 0 0.2rem;
     top: 0.6rem;
     left: 0.6rem;
@@ -132,7 +132,7 @@ input{
 }
 
 input:focus{
-    outline-color: #fd7e14;
+    outline-color:#f36e21;
 }
 
 button {
@@ -141,7 +141,7 @@ button {
     padding: 10px 20px;
     margin: 20px 0;
     float: right;
-    background-color: #fd7e14;
+    background-color: #f36e21;
     color: #ffffff;
     transition: all 200ms;
 }

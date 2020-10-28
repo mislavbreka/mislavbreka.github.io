@@ -1,126 +1,154 @@
 let count = 1;
 
-function addNode() {
-    let curentCourse = document.getElementById('course-' + count);
-    let newCourse = curentCourse.cloneNode(true);
-
-    newCourse.id = 'course-' + (count + 1);
-    newCourse.childNodes[1].textContent = 'Course ' + (count + 1);
-
-    newCourse.childNodes[3].childNodes[3].value = '';
-    newCourse.childNodes[3].childNodes[1].setAttribute('for', 'grade-' + (count + 1));
-    newCourse.childNodes[3].childNodes[3].setAttribute('id', 'grade-' + (count + 1));
-    newCourse.childNodes[3].childNodes[3].setAttribute('oninput', 'addNextNode(' + (count + 1) + ')');
-
-    newCourse.childNodes[5].childNodes[3].value = '';
-    newCourse.childNodes[5].childNodes[1].setAttribute('for', 'grade-' + (count + 1));
-    newCourse.childNodes[5].childNodes[3].setAttribute('id', 'credit-' + (count + 1));
-    newCourse.childNodes[5].childNodes[3].setAttribute('oninput', 'addNextNode(' + (count + 1) + ')');
-
-    document.getElementById('course-' + count).after(newCourse);
-
-    count++;
-}
-
-function addNextNode(courseNum) {
-    if (!checkIfExists(courseNum)) {
-        addNode()
+const addCourse = (num) => {
+    if (courseExists(num + 1)) {
+        return;
     }
+    let oldCourse = getCourse(count).cloneNode(true);
+    let newCourse = setCourseNum(oldCourse, ++count);
+    appendCourse(count-1, newCourse)
 }
 
-function checkIfExists(courseNum) {
-    if (document.getElementById('course-' + (courseNum + 1)) == null) {
+const courseExists = (num) => {
+    if (document.getElementById(`course-${num}`) == null) {
         return false;
     }
     return true;
 }
 
-function checkValue(symbol){
-    if (symbol=='+'){
+const getCourse = (num) => {
+    return document.getElementById(`course-${num}`);
+}
+
+const setCourseNum = (course, num) => {
+    course.id = `course-${num}`;
+    course.childNodes[1].textContent = `Course ${num}`;
+    course.childNodes[3].childNodes[3].value = ``;
+    course.childNodes[3].childNodes[1].setAttribute('for', `grade-${num}`);
+    course.childNodes[3].childNodes[3].setAttribute('id', `grade-${num}`);
+    course.childNodes[3].childNodes[3].setAttribute('oninput', `addCourse(${num})`);
+    course.childNodes[5].childNodes[3].value = ``;
+    course.childNodes[5].childNodes[1].setAttribute('for', `grade-${num}`);
+    course.childNodes[5].childNodes[3].setAttribute('id', `credit-${num}`);
+    course.childNodes[5].childNodes[3].setAttribute('oninput', `addCourse(${num})`);
+    return course;
+}
+
+const appendCourse = (id, course) => {
+    document.getElementById(`course-${id}`).after(course);
+}
+
+function calcGPA() {
+    deleteErrors();
+    let sumPoints = 0;
+    let sumCredits = 0;
+
+    for (let counter = 1; courseExists(counter + 1); counter++) {
+        let currentPoints = 0;
+        let currentCourse = getCourse(counter);
+
+        currentCourse.childNodes[3].childNodes[3].value = currentCourse.childNodes[3].childNodes[3].value.toUpperCase();
+
+        let gradeString = currentCourse.childNodes[3].childNodes[3].value.replace(/\s/g, '');
+        let grade = gradeString.charAt(0);
+
+        let creditString = currentCourse.childNodes[5].childNodes[3].value.replace(/\s/g, '');
+        let credit = parseInt(creditString);
+
+        let symbol = '';
+
+        for (let i = 0; i<gradeString.length; i++) {
+            if(gradeString.charAt(i)=='+'||gradeString.charAt(i)=='-'){
+                symbol = gradeString.charAt(i);
+                break;
+            }
+        }
+
+        if ( isNaN(creditString) || ( 0 > credit || credit > 4)) {
+            addError(`Wrong Credit for <em>Course ${counter}</em> - Expected: <em>1 2 3</em> or <em>4</em> , and got: <em>${creditString}</em>.`);
+            currentCourse.childNodes[5].childNodes[3].value = "";
+        } else if (creditString == "") {
+            addError(`Credit for <em>Course ${counter}</em> is empty - Expected: <em>1 2 3</em> or <em>4</em>.`);
+        }
+
+        if (gradeString.replace('+', '').replace('-', '').length>1 && getSpecialPoints(symbol)!=0){
+            currentCourse.childNodes[3].childNodes[3].value = `${grade}${symbol}`;
+        }else if (gradeString.replace('+', '').replace('-', '').length>1) {
+            currentCourse.childNodes[3].childNodes[3].value = `${grade}`;
+        }
+
+        let points = gradeToPoints(grade);
+
+        if (points!=-1){
+            currentPoints += points;
+        }else if (grade != ""){
+            addError(`Wrong Grade for <em>Course ${counter}</em> - Expected: <em>A B C D</em> or <em>F</em> , and got: <em> ${gradeString}</em>.`);
+            currentCourse.childNodes[3].childNodes[3].value = "";
+        } else {
+            addError(`Grade for <em>Course ${counter}</em> is empty - Expected: <em>A B C D</em> or <em>F</em>.`);
+        }
+
+        if (grade != "A" && grade != 'F') {
+            currentPoints += getSpecialPoints(symbol);
+        } else if (grade == 'A' && symbol == '-') {
+            currentPoints += getSpecialPoints(symbol);
+        }
+
+        if ((0 <= credit && credit <= 4) && points != -1) {
+            sumPoints += currentPoints * credit;
+            sumCredits += credit;
+        }
+    }
+
+    let GPA = Math.round(sumPoints / sumCredits * 1000) / 1000;
+
+    if (!isNaN(GPA)) {
+        document.getElementById('result').innerHTML = GPA;
+    } else {
+        document.getElementById('result').innerHTML = "0.00";
+    }
+}
+
+let gradeToPoints = (grade) => {
+    switch (grade) {
+        case 'A':
+            return 4;
+        case 'B':
+            return 3;
+        case 'C':
+            return 2;
+        case 'D':
+            return 1;
+        case 'F':
+            return 0;
+        default:
+            return -1;
+    }
+}
+
+const getSpecialPoints = (symbol) => {
+    if (symbol == '+') {
         return 0.3;
-    }else if(symbol=='-'){
+    } else if (symbol == '-') {
         return -0.3;
     }
     return 0;
 }
 
-function addError(message){
-    if (document.getElementById('error').innerHTML==""){
-        document.getElementById('error').innerHTML = "<a><em>Errors: </em></a>"
+function addError(message) {
+    if (checkErrors()) {
+        document.getElementById('error').innerHTML = `<a><em>Errors: </em></a>`;
     }
-    document.getElementById('error').innerHTML += "<li>" + message + "</li>";
+    document.getElementById('error').innerHTML += `<li>${message}</li>`;
 }
 
-function delError(){
-    document.getElementById('error').innerHTML = "";
+function deleteErrors() {
+    document.getElementById('error').innerHTML = ``;
 }
 
-function calculateGPA() {
-    delError();
-
-    let sumGrades = 0;
-    let sumCredits = 0;
-
-    for (let counter = 0 ; checkIfExists(counter) ; counter++) {
-
-        let currentGrade = 0;
-
-        let currentCourse = document.getElementById('course-' + (counter + 1));
-        let gradeString = currentCourse.childNodes[3].childNodes[3].value.replace(/\s/g, '');
-        let credit = parseInt(currentCourse.childNodes[5].childNodes[3].value.replace(/\s/g, ''));
-
-        let grade = gradeString.charAt(0);
-        let symbol = gradeString.charAt(1);
-
-        switch (grade) {
-            case 'A': case 'a':
-                currentGrade = 4;
-                if(symbol=='-'){
-                    currentGrade += checkValue(symbol);
-                }
-                break;
-            case 'B': case 'b':
-                currentGrade = 3;
-                currentGrade += checkValue(symbol);
-                break;
-            case 'C': case 'c':
-                currentGrade = 2;
-                currentGrade += checkValue(symbol);
-                break;
-            case 'D': case 'd':
-                currentGrade = 1;
-                currentGrade += checkValue(symbol);
-                break;
-            case 'F': case 'f':
-                currentGrade = 0;
-                break;
-            default:
-                if (grade!=""){
-                    addError("Wrong Grade for Course " + (counter+1) + " - Expected: <em>A B C D</em> or <em>F</em> , and got: <em> " + gradeString +"</em>.");
-                    currentCourse.childNodes[3].childNodes[3].value = "";
-                }
-                if ( !isNaN(credit) && !(0<credit && credit<5) ){
-                    addError("Wrong Credit for Course " + (counter+1) + " - Expected: <em>1 2 3</em> or <em>4</em> , and got: <em> " + credit +"</em>.");
-                    currentCourse.childNodes[5].childNodes[3].value = "";
-                }
-                continue;
-        }
-
-        if ( 0<credit && credit<5 ){
-            sumGrades += currentGrade * credit;
-            sumCredits += credit;
-        } else {
-            if ( !isNaN(credit) ){
-                addError("Wrong Credit for Course " + (counter+1) + " - Expected: <em>1 2 3</em> or <em>4</em> , and got: <em> " + credit +" </em>.");
-            }
-            currentCourse.childNodes[5].childNodes[3].value = "";
-        }
+function checkErrors() {
+    if (document.getElementById('error').innerHTML == ``) {
+        return true;
     }
-
-    let GPA = sumGrades/sumCredits;
-    if ( isNaN(GPA) ) {
-        addError("GPA could not be calculated... :(");
-    } else {
-        document.getElementById('result').innerHTML = Math.round(GPA * 100) / 100;
-    }
+    return false;
 }
