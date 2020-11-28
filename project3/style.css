@@ -54,18 +54,17 @@ nav {
 #splash .logo {
   transform: scale(2);
   grid-template-areas:
-    "icon logo"
-    " bar bar "
-    "load load";
+    "logo name name"
+    "load load load";
   transition: all 0.2s;
 }
 
 #splash .logo .atom {
-  grid-area: icon;
+  grid-area: logo;
 }
 
 #splash .logo a {
-  grid-area: logo;
+  grid-area: name;
 }
 
 #splash .logo p {
