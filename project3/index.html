@@ -4,17 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <div id="splash">
-        <div class="logo" id="atom-logo">
+        <div class="logo">
             <div class="atom">
                 <div></div>
                 <div></div>
@@ -28,7 +29,7 @@
     </div>
 
     <nav>
-        <div class="logo" id="atom-logo">
+        <div class="logo">
             <div class="atom">
                 <div></div>
                 <div></div>
@@ -110,20 +111,20 @@
         </div>
     </nav>
     <main>
-        <section class="landing">
+        <section id="landing">
             <img class="mobile top" src="assets/images/lines-top.svg" alt="">
             <img class="mobile bottom" src="assets/images/lines-bottom.svg" alt="">
             <img class="desktop left" src="assets/images/lines-left.svg" alt="">
             <img class="desktop right" src="assets/images/lines-right.svg" alt="">
             <div class="content">
-                <p>Welcome to electron !</p>
-                <p>Goal of this website is to teach you something about electronics in an interesting and fun way.</p>
-                <button>References</button>
-                <button>Start learning</button>
+                <h2>Welcome to electron !</h2>
+                <p>Goal of this website is to teach you usefull things about electronics in an interesting and fun way.</p>
+                <button onclick="location.href ='references'">References</button>
+                <button onclick="location.href ='#intro'">Get started</button>
             </div>
 
         </section>
-        <section class="introduction">
+        <section id="intro">
 
         </section>
         <section>
