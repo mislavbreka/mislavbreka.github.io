@@ -30,6 +30,54 @@ nav {
   color: rgb(90, 90, 90);
 }
 
+.logo p {
+  display: none;
+}
+
+/* splash screen */
+
+#splash {
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+#splash {
+  place-items: center;
+}
+
+#splash .logo {
+  transform: scale(2);
+  grid-template-areas:
+    "icon logo"
+    " bar bar "
+    "load load";
+  transition: all 0.2s;
+}
+
+#splash .logo .atom {
+  grid-area: icon;
+}
+
+#splash .logo a {
+  grid-area: logo;
+}
+
+#splash .logo p {
+  display: grid;
+  grid-area: load;
+  margin: 0.5rem;
+  font-size: 0.5rem;
+  font-weight: bolder;
+  text-align: center;
+  color: rgb(3, 145, 228);
+}
+
 /* icon */
 
 .atom {
@@ -186,7 +234,7 @@ nav {
 .menu div {
   width: 24px;
   height: 2px;
-  background-color:rgb(90, 90, 90);
+  background-color: rgb(90, 90, 90);
   margin: 5px 0;
   transition: 0.4s;
 }
@@ -262,7 +310,7 @@ nav {
 }
 
 .links ul li:hover > a {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .links ul li:hover > img {
@@ -311,24 +359,27 @@ nav {
 }
 
 #toggle {
-    display: none;
-    position: absolute;
+  display: none;
+  position: absolute;
 }
 
 nav input:checked ~ .links {
-    display: grid;
+  display: grid;
 }
 
 @media only screen and (min-width: 1000px) {
-    nav {
-        grid-auto-columns: 1fr 1fr;
-    }
+  .atom div {
+    border: 1px solid rgb(90, 90, 90);
+  }
+  nav {
+    grid-auto-columns: 1fr 1fr;
+  }
 
-    .menu {
-        display: none;
-    }
+  .menu {
+    display: none;
+  }
 
-    .links {
+  .links {
     display: grid;
     position: relative;
     justify-self: end;
@@ -365,5 +416,4 @@ nav input:checked ~ .links {
     border-radius: 0 0 4px 4px;
     width: auto;
   }
-
 }
