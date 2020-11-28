@@ -1,0 +1,272 @@
+@font-face {
+  font-family: Roboto;
+  src: url("../font/Roboto-Thin.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../font/Roboto-Light.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../font/Roboto-Regular.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("../font/Roboto-Black.ttf");
+  font-weight: 400;
+}
+
+* {
+    font-family: Roboto;
+    font-weight: 200;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  box-shadow: 0px 1px 2px 0px #00000033;
+}
+
+.links, .search, .logo {
+    place-self: center;
+}
+
+nav .logo {
+  text-align: center;
+  font-size: 2rem;
+}
+
+nav .logo a {
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    animation-name: anim;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+
+nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  align-self: center;
+  justify-self: end;
+  list-style: none;
+  min-height: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 0.5rem 1rem;
+  place-items: center;
+}
+
+nav ul li img {
+  display: grid;
+  margin-right: 1rem;
+  justify-self: start;
+  width: 2rem;
+  opacity: 0.5;
+  transition-property: transform opacity;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+nav ul li a {
+  text-decoration: none;
+  justify-self: end;
+  color: #000000;
+  font-size: 1.2rem;
+}
+
+nav ul li:hover {
+  cursor: pointer;
+  background-color: orange;
+  border-radius: 4px;
+}
+
+nav ul li:hover > img{
+    opacity: initial;
+    animation-name: animate;
+    animation-duration: 1000ms;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate {
+  0%, 100% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-20deg);
+  }
+  50% {
+    transform: rotateZ(20deg);
+  }
+  75% {
+    transform: rotateZ(0deg);
+  }
+}
+
+.dropdown ul {
+  grid-auto-flow: row;
+}
+
+.dropdown {
+  position: relative;
+  display: grid;
+}
+
+.dropdown div {
+  display: none;
+  position: absolute;
+  top: 3rem;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 2px 0px #00000033;
+  border-radius: 0 0 4px 4px;
+}
+
+.dropdown:hover div {
+  display: grid;
+  z-index: 1;
+}
+
+nav .search div {
+    display: grid;
+    grid-template-columns: 1fr 2rem;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    align-items: center;
+    padding: 1px;
+}
+
+nav .search div img {
+    justify-self: center;
+    width: 1rem;
+    padding: 0.5rem;
+    transition: background-color 200ms ease-in-out;
+}
+
+nav .search div input {
+    width: 100%;
+    background-color: transparent;
+    border: 0px solid;
+    font-size: 1.1rem;
+    padding-left: 1rem;
+}
+
+nav .search div img:hover {
+    cursor: pointer;
+    background-color: #ffa600;
+    border-radius: 4px;
+}
+
+nav .search div input:focus{
+    outline: none;
+}
+
+
+header section {
+  display: grid;
+  background-color: #ffa600;
+  box-shadow: 0px 1px 2px 0px #00000033;
+  margin-bottom: 2px;
+  place-content: center;
+}
+
+header section div{
+  display: grid;
+  width: 100vw;
+  max-width: 1000px;
+}
+
+
+header section div *{
+  padding: 5px;
+  margin: 5px;
+}
+
+header section p {
+  text-align: center;
+}
+
+header section div button {
+  place-self: end;
+}
+
+header section div button:hover {
+  cursor: pointer;
+}
+
+#cancel-cookies:hover {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  nav {
+    grid-template-columns: none;
+    grid-template-areas:
+    "logo"
+    "search"
+    "links";
+    place-content: center;
+    height: auto;
+  }
+
+  nav .logo {
+    grid-area: logo;
+  }
+
+  nav .search {
+    grid-area: search;
+    width: 100%;
+    max-width: 600px;
+    margin: 1rem 0;
+  }
+
+  nav .search div {
+    display: grid;
+    width: 90%;
+    margin: 0 4%;
+  }
+
+  nav .links {
+    grid-area: links;
+  }
+
+  nav ul {
+    grid-auto-flow: row;
+    width: 100vw;
+  }
+
+  nav ul li {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  nav ul li a {
+    justify-self: start;
+  }
+
+  nav ul li img {
+    justify-self: end;
+  }
+
+  nav ul .dropdown {
+      display: grid;
+  }
+
+}

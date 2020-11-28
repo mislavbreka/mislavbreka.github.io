@@ -1,92 +1,137 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<link rel="icon" href="assets/githubIcon.png">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navigation.css">
+    <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
-<header id="showcase">
-  <div id="logo">Mislav<br>
-    |Breka</div>
-  <div id="content">
-    <h1 class="typewrite" data-wait="1000" data-words='[ "Hi there!", "no plugins", "no bootstrap", "pure html", "pure css", "pure javascript", "cute kitten"]'></h1>
-  </div>
-  <div class="btncontainer">
-  <div class="btnscroll">MEOW</div>
-</div>
-</header>
+    <div id="splash">
+        <div class="logo">
+            <div class="atom">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <a>electron</a>
+            <p>
+                LOADING...
+            </p>
+        </div>
+    </div>
 
-<div class="section" id="sec1">
-  <h1 class="description">Web design, redefined.</h1>
-     <div class="show">
-       <div class="join">
-        <h1 class="rgbshow"></h1>
-        <h1 class="hexshow hidetxt"></h1>
-      </div>
-    </div>
-  <h1 class="fps" id="fps"></h1>
-</div>
+    <nav>
+        <div class="logo">
+            <div class="atom">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <a>electron</a>
+        </div>
 
-<h1 class="txtbar">STUFF I'M AVERAGE AT</h1>
-<section class="boxcontainer" id="sec2">
-<div class="boxes">
-  <div class="box" id="box1" onclick="dropDown('1')"> <img src="assets/cIcon.png" alt=""><a>C</a>
-  <div class="hidetxt" id="txt1">
-  <h4 class="exp">EXPERIENCE: 1 year</h4>
-  <h4>C is a procedural programming language.<br><br>The main features of C language include low-level access to memory, simple set of keywords, and clean style, these features make C language suitable for system programming like operating system or compiler development.</h4>
-  </div>
-  </div>
-  <div class="box" id="box2" onclick="dropDown('2')"> <img src="assets/pythonIcon.png" alt=""><a>PYTHON</a>
-    <div class="hidetxt" id="txt2">
-        <h4 class="exp">EXPERIENCE: 2 years</h4>
-      <h4>Python is an interpreted, high-level, general-purpose programming language.<br><br>  Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.</h4>
-    </div>
-  </div>
-  <div class="box" id="box3" onclick="dropDown('3')"> <img src="assets/arduinoIcon.png" alt=""><a>ARDUINO</a>
-    <div class="hidetxt" id="txt3">
-        <h4 class="exp">EXPERIENCE: 4 years</h4>
-      <h4>The Arduino IDE supports the languages C and C++ using special rules of code structuring.<br><br>It is an open-source hardware and software company, project and user community.</h4>
-    </div>
-  </div>
-  <div class="box" id="box4" onclick="dropDown('4')"> <img src="assets/htmlIcon.png" alt=""><a>HTML</a>
-    <div class="hidetxt" id="txt4">
-        <h4 class="exp">EXPERIENCE: 5 years</h4>
-      <h4>Hyper Ttext Markup Language<br><br>HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</h4>
-    </div>
-  </div>
-  <div class="box" id="box5" onclick="dropDown('5')"> <img src="assets/javascriptIcon.png" alt=""><a>JAVASCRIPT</a>
-    <div class="hidetxt" id="txt5">
-        <h4 class="exp">EXPERIENCE: 1 year</h4>
-      <h4>Javascript is a high-level, interpreted programming language.<br><br>JavaScript enables interactive web pages and is an essential part of web applications. The vast majority of websites use it, and major web browsers have a dedicated JavaScript engine to execute it.</h4>
-    </div>
-  </div>
-  <div class="box" id="box6" onclick="dropDown('6')"> <img src="assets/cssIcon.png" alt=""><a>CSS</a>
-    <div class="hidetxt" id="txt6">
-        <h4 class="exp">EXPERIENCE: 5 years</h4>
-      <h4>Cascading Style Sheets<br><br>CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts. It is a style sheet language used for describing the presentation of a document written in a markup language like HTML.</h4>
-    </div>
-  </div>
-</div>
-</section>
-<footer>
-<div class="contentt">
-<div class="clear"></div>
-<div id="poweredby">
-  <p>Hosted by Github</p>
-  <a href="https://github.com/mislavbreka/praksa/raw/master/test.exe">
-    <img src="assets/githubIcon.png" alt="" > </a> </div>
-  <p>Entirely coded and developed by Mislav Breka.</p>
-<div class="clear"></div>
-<div id="social">
-  <ul class="social">
-    <li><a href="https://www.facebook.com/mislav.breka.9">Facebook</a></li>
-    <li><a href="https://github.com/mislavbreka">Github</a></li>
-    <li class="last"><a href="https://www.instagram.com/mis1av">Instagram</a></li>
-  </ul>
-</div>
-</footer>
-<script src="script.js" type="text/javascript"></script>
+        <label class="menu" for="toggle" onclick="this.classList.toggle('change')">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+
+        <input type="checkbox" id="toggle" />
+
+        <div class="links">
+            <ul>
+                <li class="active">
+                    <a href="">Homepage</a>
+                </li>
+                <li>
+                    <a href="">History</a>
+                </li>
+                <li class="dropdown">
+                    <a>Passive&nbsp;Elements</a>
+                    <div>
+                        <ul>
+                            <li>
+                                <img src="assets/icons/RESISTOR2.svg" alt="">
+                                <a href="">Resistors</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/inductor.svg" alt="">
+                                <a href="">Inductors</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/capacitor.svg" alt="">
+                                <a href="">Capacitors</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/transformer.svg" alt="">
+                                <a href="">Transformers</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a>Active&nbsp;Elements</a>
+                    <div>
+                        <ul>
+                            <li>
+                                <img src="assets/icons/diode.svg" alt="">
+                                <a href="">Diodes</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/transistor.svg" alt="">
+                                <a href="">Transistors</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/IC.svg" alt="">
+                                <a href="">ICs</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/microcontroller.svg" alt="">
+                                <a href="">Microcontrollers</a>
+                            </li>
+                            <li>
+                                <img src="assets/icons/microprocessor.svg" alt="">
+                                <a href="">Microprocessors</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="">References</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section id="landing">
+            <img class="mobile top" src="assets/images/lines-top.svg" alt="">
+            <img class="mobile bottom" src="assets/images/lines-bottom.svg" alt="">
+            <img class="desktop left" src="assets/images/lines-left.svg" alt="">
+            <img class="desktop right" src="assets/images/lines-right.svg" alt="">
+            <div class="content">
+                <h2>Welcome to electron !</h2>
+                <p>Goal of this website is to teach you usefull things about electronics in an interesting and fun way.</p>
+                <button onclick="location.href ='references'">References</button>
+                <button onclick="location.href ='#intro'">Get started</button>
+            </div>
+
+        </section>
+        <section id="intro">
+
+        </section>
+        <section>
+
+        </section>
+    </main>
+    <script src="script.js" async defer></script>
 </body>
+
 </html>
