@@ -1,0 +1,78 @@
+main {
+    display: grid;
+}
+
+section {
+    display: grid;
+    height: 100vh;
+}
+
+.landing {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    grid-template-areas: unset;
+}
+
+main > div {
+    background-color: rgb(3, 145, 228);
+    height: 30vh;
+}
+
+.mobile {
+    display: grid;
+}
+
+.desktop {
+    display: none;
+    align-self: center;
+}
+
+.desktop.left {
+    grid-area: left;
+}
+
+.desktop.right {
+    grid-area: right;
+}
+
+.landing {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "top"
+    "content"
+    "bottom";
+}
+
+.mobile.top {
+    grid-area: top;
+    margin-top: -50px;
+}
+
+.mobile.bottom {
+    grid-area: bottom;
+    align-self: end;
+}
+
+.content {
+    place-self: center;
+}
+
+@media only screen and (min-width: 900px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: grid;
+    }
+
+    .landing {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr 2fr 1fr;
+        grid-template-areas: "left content right";
+    }
+
+}
