@@ -75,3 +75,22 @@ main > div {
         grid-template-areas: "left content right";
     }
 }
+
+@media only screen and (min-width: 700px) and (orientation:landscape) {
+    .mobile {
+        display: grid;
+    }
+    .desktop {
+        display: none;
+    }
+
+    .landing {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+        "top"
+        "content"
+        "bottom";
+    }
+}
