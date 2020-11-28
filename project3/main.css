@@ -60,7 +60,7 @@ main > div {
     place-self: center;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 700px) and (orientation:portrait) {
     .mobile {
         display: none;
     }
@@ -74,5 +74,4 @@ main > div {
         grid-auto-columns: 1fr 2fr 1fr;
         grid-template-areas: "left content right";
     }
-
 }
