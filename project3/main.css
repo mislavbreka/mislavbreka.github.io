@@ -27,7 +27,7 @@ p {
 
 #intro p, #intro li {
     font-size: 1.5rem;
-    text-align: justify;
+    text-align: start;
 }
 
 em {
@@ -164,7 +164,7 @@ button:hover {
 
 #ohm div {
     padding: 2rem;
-    text-align: justify;
+    text-align: start;
 }
 
 #ohm h3, #ohm div div {
