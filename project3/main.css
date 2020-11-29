@@ -2,6 +2,39 @@
     scroll-behavior: smooth;
 }
 
+h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+
+p, #intro ul li {
+    font-family: 'Inconsolata', monospace;
+    line-height: 2rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+#landing p {
+    text-align: center;
+}
+
+#intro p, #intro li {
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+em {
+    font-style: normal;
+    font-weight: bolder;
+}
+
 main {
     display: grid;
     overflow: hidden;
@@ -9,7 +42,7 @@ main {
 
 section {
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #landing {
@@ -62,11 +95,13 @@ section {
     z-index: -1;
 }
 
-#landing .content {
-    place-self: center;
+.content {
     padding: 2rem;
     text-align: center;
-    font-size: 1.3rem;
+}
+
+#landing .content {
+    place-self: center;
 }
 
 button {
@@ -97,6 +132,56 @@ button:hover {
 
 .content button:nth-of-type(1):hover, .content button:nth-of-type(2):hover {
     transform: scale(1.1);
+}
+
+#intro {
+    display: grid;
+    place-items: center;
+    color: rgb(255, 255, 255);
+}
+
+#intro ul {
+    padding-left: 0;
+}
+
+#intro .content {
+    padding: 2rem;
+    font-size: 1.3rem;
+    max-width: 1000px;
+}
+
+.content ul {
+    max-width: 800px;
+    margin: 4rem auto;
+    place-self: center;
+
+}
+
+.content ul li {
+    margin: 1rem 0;
+    text-align: start;
+}
+
+#ohm div {
+    padding: 2rem;
+    text-align: justify;
+}
+
+#ohm h3, #ohm div div {
+    text-align: center;
+}
+
+#ohm .content {
+    max-width: 1000px;
+    place-self: center;
+}
+
+#ohm em {
+    color: rgb(3, 145, 228);
+}
+
+#elements {
+    background-color: rgb(3, 145, 228);
 }
 
 @keyframes fadeIn {
@@ -143,6 +228,23 @@ button:hover {
 
 
 @media only screen and (min-width: 700px) {
+    h2{
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    p, #intro li {
+        font-size: 1.5rem;
+    }
+
+    #landing p {
+        text-align: center;
+    }
+
+    #intro p, #intro li {
+        text-align: justify;
+    }
+
     .mobile {
         display: none;
     }
@@ -159,6 +261,16 @@ button:hover {
 
     #landing .content {
         text-align: center;
-        font-size: 2rem;
+    }
+
+    #ohm > div {
+        display: grid;
+        grid-auto-flow: row;
+        place-content: center;
+    }
+    #ohm > div > div {
+        display: grid;
+        grid-auto-flow: column;
+        place-content: center;
     }
 }
