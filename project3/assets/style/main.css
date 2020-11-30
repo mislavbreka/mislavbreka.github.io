@@ -1,0 +1,360 @@
+* {
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: rgb(102, 102, 102);
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+p, #intro ul li {
+    line-height: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+}
+
+#landing p {
+    text-align: center;
+}
+
+#intro p, #intro li {
+    font-size: 1.5rem;
+    text-align: start;
+}
+
+em {
+    font-style: normal;
+    font-weight: 600;
+}
+
+main {
+    display: grid;
+    overflow: hidden;
+}
+
+section {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+}
+
+
+section:nth-of-type(even), section:nth-of-type(even) h2 {
+    background-color: rgb(3, 145, 228);
+    color: rgb(255, 255, 255);
+}
+
+
+#landing {
+    display: grid;
+    grid-auto-flow: row;
+    grid-auto-columns: 1fr;
+    grid-template-areas: unset;
+}
+
+
+.mobile {
+    display: grid;
+}
+
+.desktop {
+    display: none;
+    align-self: center;
+}
+
+.desktop.left {
+    max-height: 800px;
+    grid-area: left;
+    justify-self: start;
+}
+
+.desktop.right {
+    max-height: 800px;
+    grid-area: right;
+    justify-self: end;
+}
+
+#landing {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "top"
+    "content"
+    "bottom";
+}
+
+.mobile.top {
+    grid-area: top;
+    margin-top: -50px;
+    z-index: -1;
+}
+
+.mobile.bottom {
+    grid-area: bottom;
+    align-self: end;
+    z-index: -1;
+}
+
+.content {
+    padding: 2rem;
+}
+
+button {
+    outline: none;
+    border: none;
+    padding: 8px;
+    margin: 4px;
+    border: 1px solid rgb(0, 122, 192);
+    min-width: 100px;
+    border-radius: 4px;
+    font-size: 1.4rem;
+    transition: all 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+button.btn1{
+    background-color: rgb(255, 255, 255);
+    color: rgb(3, 145, 228);
+}
+
+button.btn2{
+    background-color: rgb(3, 145, 228);
+    color: rgb(255, 255, 255);
+}
+
+#intro ul {
+    padding-left: 0;
+}
+
+#landing .content {
+    text-align: center;
+}
+.content {
+    padding: 2rem;
+    font-size: 1.3rem;
+    max-width: 1000px;
+}
+
+.content ul {
+    max-width: 700px;
+    margin: 4rem auto;
+    place-self: center;
+
+}
+
+.content ul li {
+    margin: 1rem 0;
+    text-align: start;
+}
+
+#ohm > div {
+    padding: 2rem;
+    text-align: start;
+}
+
+#ohm > div > div {
+    gap: 2rem;
+}
+
+#ohm h3, #ohm div div {
+    text-align: center;
+}
+
+#ohm h3 {
+    font-size: 1.4rem;
+}
+
+#ohm .equation {
+    padding: 1rem;
+    background-color: rgb(245, 245, 245);
+    border-radius: 4px;
+    color: rgb(3, 145, 228);
+}
+
+.cards {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.cards div {
+    display: grid;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: start;
+}
+
+.cards div h3 {
+    margin: 0 0 1rem 0;
+}
+
+.cards div button {
+    place-self: end;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.wrapper div {
+    display: grid;
+    min-width: 150px;
+    padding: 1rem;
+    position: relative;
+}
+
+.wrapper div h3 {
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 10;
+    transform: translate(-50%, 0);
+    color: rgb(0, 122, 192);
+    opacity: 0;
+    transition: all 1s;
+}
+
+.wrapper div img {
+    opacity: 0.5;
+    transition: all 1s;
+}
+
+.wrapper div:hover img {
+    opacity: 0.9;
+    cursor: pointer;
+    transform: scale(0.9);
+}
+
+.wrapper div:hover img ~ h3 {
+    opacity: 1;
+}
+
+.wrapper div h3 {
+    margin: 0 0 1rem 0;
+}
+
+.wrapper button{
+    place-self: end;
+}
+
+#elements .content {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+@media only screen and (min-width: 800px) {
+    h2{
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    p, #intro li {
+        font-size: 1.4rem;
+    }
+
+    #landing p {
+        text-align: center;
+    }
+
+    #intro p, #intro li {
+        text-align: justify;
+    }
+
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: grid;
+    }
+
+    #landing {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr 2fr 1fr;
+        grid-template-areas: "left content right";
+    }
+
+    #landing .content {
+        text-align: center;
+        min-width: 400px;
+    }
+
+    #ohm > div {
+        display: grid;
+        grid-auto-flow: row;
+        place-content: center;
+    }
+    #ohm > div > div {
+        display: grid;
+        grid-auto-flow: column;
+        place-content: center;
+    }
+
+    .cards {
+        display: grid;
+        grid-auto-flow: column;
+    }
+}

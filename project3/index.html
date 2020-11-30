@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"><link rel="stylesheet" href="navigation.css">
-    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/style/navigation.css">
+    <link rel="stylesheet" href="assets/style/main.css">
 </head>
 
 <body>
@@ -118,8 +120,8 @@
                 <h2>Welcome to electron !</h2>
                 <p>Our goal is to teach you usefull things about electronics in an interesting and fun way.
                 </p>
-                <button onclick="location.href ='references'">References</button>
-                <button onclick="location.href ='#intro'">Get started</button>
+                <button onclick="location.href ='references'" class="btn1">References</button>
+                <button onclick="location.href ='#intro'" class="btn2">Get started</button>
             </div>
 
         </section>
@@ -141,29 +143,106 @@
         <section id="ohm">
             <div class="content">
                 <h2>Ohm's law:</h2>
-                <p>Ohm’s principal discovery was that the amount of electric current through a metal conductor in a circuit is directly proportional to the voltage impressed across it. Ohm expressed his discovery in the form of a simple equation, describing how voltage, current, and resistance interrelate:</p>
-                <h3><em>VOLTAGE = CURRENT × RESISTANCE</em></h3>
+                <p>Ohm’s principal discovery was that the amount of electric current through a metal conductor in a
+                    circuit is directly proportional to the voltage impressed across it. Ohm expressed his discovery in
+                    the form of a simple equation, describing how voltage, current, and resistance interrelate:</p>
+                <div class="equation">
+                    <h3>VOLTAGE = CURRENT × RESISTANCE</h3>
+                </div>
                 <div>
                     <div>
-                        <h3>Voltage ( E )</h3>
+                        <h3>Voltage&nbsp;(&nbsp;E&nbsp;)</h3>
                         <p>E = I × R</p>
                     </div>
                     <div>
-                        <h3>Current ( I )</h3>
+                        <h3>Current&nbsp;(&nbsp;I&nbsp;)</h3>
                         <p>I = E ÷ R</p>
                     </div>
                     <div>
-                        <h3>Resistance ( R )</h3>
+                        <h3>Resistance&nbsp;(&nbsp;R&nbsp;)</h3>
                         <p>R = E ÷ I</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="elements">
+        <section>
+            <div class="content">
+                <h2>What is an electric circuit?</h2>
+                <p>A circuit is a closed loop that allows charge to move from one place to another. Components in the
+                    circuit allow us to control this charge and use it to do work.</p>
 
+                <p>We divided these components into two categories:</p>
+
+                <div class="cards">
+                    <div>
+                        <h3>Passive elements</h3>
+                        <p>A passive component is an electronic component which can only receive energy, which it can
+                            either dissipate, absorb or store it in an electric field or a magnetic field.</p>
+                    </div>
+                    <div>
+                        <h3>Active elements</h3>
+                        <p>An active component is an electronic component which supplies energy to a circuit. Active
+                            elements have the ability to electrically control flow of electrons or current.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="elements">
+            <div class="content">
+                <div>
+                    <h2>Passive elements</h2>
+                    <div class="wrapper">
+                        <div>
+                            <img src="assets/icons/RESISTOR2.svg" alt="">
+                            <h3>Resistor</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/inductor.svg" alt="">
+                            <h3>Inductor</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/capacitor.svg" alt="">
+                            <h3>Capacitor</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/transformer.svg" alt="">
+                            <h3>Transformer</h3>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2>Active elements</h2>
+                    <div class="wrapper">
+                        <div>
+                            <img src="assets/icons/diode.svg" alt="">
+                            <h3>Diode</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/transistor.svg" alt="">
+                            <h3>Transistor</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/IC.svg" alt="">
+                            <h3>IC</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/microcontroller.svg" alt="">
+                            <h3>Microcontroller</h3>
+                        </div>
+                        <div>
+                            <img src="assets/icons/microprocessor.svg" alt="">
+                            <h3>Microprocessor</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
         </section>
     </main>
-    <script src="script.js" async defer></script>
+    <script src="assets/script/script.js" defer></script>
 </body>
 
 </html>
