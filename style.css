@@ -13,6 +13,7 @@
   font-family: "Poppins", sans-serif;
   color: var(--color-0);
   scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 
 em {
@@ -45,18 +46,20 @@ main,
 section,
 div {
   display: grid;
+  width: 100%;
 }
 
 nav {
   top: 0;
   position: sticky;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: auto auto auto;
   grid-template-rows: 1fr 3px;
   align-items: center;
   box-shadow: 0 0 3px 1px var(--color-3);
   z-index: 10;
   background-color: rgba(1, 109, 232, 0.05);
   backdrop-filter: blur(16px);
+  width: 100%;
 }
 
 #logo {
@@ -208,7 +211,7 @@ footer {
 }
 
 #introduction div img {
-  height: 40vh;
+  width: 60vw;
   justify-self: center;
   transform: translateZ(10px);
 }
