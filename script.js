@@ -59,160 +59,175 @@ function getSectionName(num) {
     }
 }
 
-function setSectionLabel(name){
+function setSectionLabel(name) {
     document.querySelector("#label").innerHTML = name;
 }
 
-function getSectionsHeight(){
+function getSectionsHeight() {
     let sections = document.querySelectorAll("section");
     let heights = [];
 
-    sections.forEach(function(item, _) {
+    sections.forEach(function (item, _) {
         heights.push(item.clientHeight)
     });
 
     return heights;
 }
 
-function getSection(position, sectionsHeight){
+function getSection(position, sectionsHeight) {
     let section = 0;
     let sectionToTop = sectionsHeight[0];
     while (true) {
-        if(sectionToTop >= position) {
+        if (sectionToTop >= position) {
             return section;
         }
-        if (section>sectionsHeight.length) {
+        if (section > sectionsHeight.length) {
             return -1;
         }
-        sectionToTop += sectionsHeight[section+1];
+        sectionToTop += sectionsHeight[section + 1];
         section++;
     }
 }
 
 
 particlesJS('particles-js',
-  
-  {
-    "particles": {
-      "number": {
-        "value": 120,
-        "density": {
-          "enable": true,
-          "value_area": 800
+
+    {
+        "particles": {
+            "number": {
+                "value": 120,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#016ee9"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#016ee9"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 5,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#016ee9",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 12,
+                "direction": "none",
+                "random": true,
+                "straight": false,
+                "out_mode": "out",
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true,
+        "config_demo": {
+            "hide_card": false,
+            "background_color": "#b61924",
+            "background_image": "",
+            "background_position": "50% 50%",
+            "background_repeat": "no-repeat",
+            "background_size": "cover"
         }
-      },
-      "color": {
-        "value": "#016ee9"
-      },
-      "shape": {
-        "type": "circle",
-        "stroke": {
-          "width": 0,
-          "color": "#016ee9"
-        },
-        "polygon": {
-          "nb_sides": 5
-        },
-        "image": {
-          "src": "img/github.svg",
-          "width": 100,
-          "height": 100
-        }
-      },
-      "opacity": {
-        "value": 0.5,
-        "random": false,
-        "anim": {
-          "enable": false,
-          "speed": 1,
-          "opacity_min": 0.1,
-          "sync": false
-        }
-      },
-      "size": {
-        "value": 5,
-        "random": true,
-        "anim": {
-          "enable": false,
-          "speed": 40,
-          "size_min": 0.1,
-          "sync": false
-        }
-      },
-      "line_linked": {
-        "enable": true,
-        "distance": 150,
-        "color": "#016ee9",
-        "opacity": 0.4,
-        "width": 1
-      },
-      "move": {
-        "enable": true,
-        "speed": 12,
-        "direction": "none",
-        "random": true,
-        "straight": false,
-        "out_mode": "out",
-        "attract": {
-          "enable": false,
-          "rotateX": 600,
-          "rotateY": 1200
-        }
-      }
-    },
-    "interactivity": {
-      "detect_on": "canvas",
-      "events": {
-        "onhover": {
-          "enable": true,
-          "mode": "repulse"
-        },
-        "onclick": {
-          "enable": true,
-          "mode": "push"
-        },
-        "resize": true
-      },
-      "modes": {
-        "grab": {
-          "distance": 400,
-          "line_linked": {
-            "opacity": 1
-          }
-        },
-        "bubble": {
-          "distance": 400,
-          "size": 40,
-          "duration": 2,
-          "opacity": 8,
-          "speed": 3
-        },
-        "repulse": {
-          "distance": 200
-        },
-        "push": {
-          "particles_nb": 4
-        },
-        "remove": {
-          "particles_nb": 2
-        }
-      }
-    },
-    "retina_detect": true,
-    "config_demo": {
-      "hide_card": false,
-      "background_color": "#b61924",
-      "background_image": "",
-      "background_position": "50% 50%",
-      "background_repeat": "no-repeat",
-      "background_size": "cover"
     }
-  }
 
 );
 
 $('.js-tilt').tilt({
-    maxTilt:        20,
-    perspective:    2000,   // Transform perspective, the lower the more extreme the tilt gets.
-    easing:         "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+    maxTilt: 20,
+    perspective: 2000,   // Transform perspective, the lower the more extreme the tilt gets.
+    easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
 })
+
+function setTilt(){
+    var element = $('.js-tilt').tilt();
+    if ($(window).width() < 720) {
+        element.tilt.destroy.call(element);
+    }
+    else {
+        element.tilt.reset.call(element);
+    }
+}
+
+setTilt();
+$( window ).resize(function() {
+    setTilt();
+});
