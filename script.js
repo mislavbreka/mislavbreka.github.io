@@ -211,11 +211,7 @@ particlesJS('particles-js',
 
 );
 
-$('.js-tilt').tilt({
-    maxTilt: 20,
-    perspective: 2000,   // Transform perspective, the lower the more extreme the tilt gets.
-    easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
-})
+
 
 function setTilt(){
     var element = $('.js-tilt').tilt();
@@ -224,6 +220,11 @@ function setTilt(){
     }
     else {
         element.tilt.reset.call(element);
+        element.tilt({
+            maxTilt: 40,
+            perspective: 4000,   // Transform perspective, the lower the more extreme the tilt gets.
+            easing: "cubic-bezier(.03,.98,.52,.99)",    // Easing on enter/exit.
+        });
     }
 }
 

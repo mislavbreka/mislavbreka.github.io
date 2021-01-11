@@ -209,6 +209,7 @@ footer {
   border-top: 0.5px solid var(--color-1);
   border-left: 0.5px solid var(--color-1);
 }
+                   
 
 #introduction div img {
   width: 60vw;
@@ -310,6 +311,8 @@ h3 {
   }
 
   #introduction div img {
+    width: auto;
+    height: 25rem;
     grid-area: 1/1/6/2;
   }
 
